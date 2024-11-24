@@ -1,0 +1,38 @@
+name: lint check
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.2.0'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Restore cached dependencies
+        id: cache-restored
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          
+      - name: Install dependencies
+        if: steps.cache-restored.outputs.cache-hit != 'true'
+        run: pnpm install
+        
+      - name: Lint
+        run: pnpm lint
