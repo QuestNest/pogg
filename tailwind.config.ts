@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "home-bg": "linear-gradient(180deg, rgba(92,45,58,0.2) 0%, rgba(100,17,63,1) 74%), url('/background-syndra.jpg')",
+        "home-bg": "linear-gradient(180deg, rgba(92,45,58,0.2) 0%, rgba(100,17,63,1) 74%), url('/background-home.jpg')",
       },
       colors: {
         "background": "#64113F",
