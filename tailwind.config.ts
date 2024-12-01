@@ -18,8 +18,9 @@ export default {
         "salmon-pink": "F29CA3",
         "tea-rose": "#F7CACD",
         "non-photo-blue": "#84E6F8",
-        "grey": "#A9A9AC",
+        "gray": "#A9A9AC",
         "white": "#FFFFFF",
+        "dark-gray": "#292929"
       },
     },
   },
