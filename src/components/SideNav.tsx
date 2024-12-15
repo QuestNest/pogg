@@ -3,7 +3,7 @@ import { inter } from "@/fonts/fonts";
 const SideNav = () => {
     return (
         <div
-            className="relative flex h-full w-full max-w-[15rem] flex-col bg-light-background p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5">
+            className="inline-block flex h-full w-full max-w-[15rem] flex-col bg-light-background p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5">
             <div className="p-4 mb-2">
                 <h2 className={`sm:text-5xl text-6xl font-extrabold text-white drop-shadow-lg ${inter.className}`}>
                     <span className="text-blush">P</span>O.GG
